@@ -29,6 +29,11 @@ jobs:
       - run: yarn test
 
   deploy:
+    machine:
+      enabled: true
+    working_directory: ~/hello-web-nc
+    environment:
+      HEROKU_APP_NAME: "hello-web-nc-2"
     steps:
       - checkout
       - run:
