@@ -1,9 +1,12 @@
 {
   "name": "hello-web-nc",
-  "version": "1.0.0",
+  "version": "1.0.1s",
   "main": "app.js",
   "repository": "https://github.com/khaq/hello-web-nc",
   "author": "Kha Do",
+  "engines": {
+    "node": "12.x"
+  },
   "scripts": {
     "start": "node app.js",
     "test": "./node_modules/.bin/mocha ./tests --recursive"
