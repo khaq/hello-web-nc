@@ -18,15 +18,31 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: yarn install
+      - run:
+          name: Install
+          command: yarn
 
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # run tests!
-      - run: yarn test
+      - run:
+          name: Add test reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+      
+      - run:
+          name: Lint
+          command: yarn lint
+
+      - run:
+          name: Test
+          command: |
+            ./cc-test-reporter before-build
+            yarn run test
+            ./cc-test-reporter after-build
 
   deploy:
     machine:
