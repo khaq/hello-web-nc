@@ -9,14 +9,19 @@
   },
   "scripts": {
     "start": "node app.js",
+    "lint": "eslint .",
     "test": "nyc mocha ./tests --recursive && nyc report --reporter=lcov"
   },
   "license": "MIT",
   "dependencies": {
+    "debug": "^4.1.1",
     "express": "^4.17.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
     "mocha": "^6.2.2",
     "nyc": "^14.1.1"
   }
