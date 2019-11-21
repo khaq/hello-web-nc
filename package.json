@@ -5,7 +5,8 @@
   "repository": "https://github.com/khaq/hello-web-nc",
   "author": "Kha Do",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "./node_modules/.bin/mocha ./tests --recursive"
   },
   "license": "MIT",
   "dependencies": {
