@@ -38,7 +38,7 @@ jobs:
           name: Test
           command: |
             ./cc-test-reporter before-build
-            yarn run test:cov:ci
+            yarn run test
             ./cc-test-reporter after-build
 
   deploy:
